@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>햄스터 잡기 게임</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>햄스터 잡기 게임</h1>
+      <p class="desc">구멍에서 튀어나오는 햄스터를 빠르게 클릭해서 점수를 올리세요.</p>
+
+      <section class="hud" aria-label="게임 정보">
+        <div>점수: <strong id="score">0</strong></div>
+        <div>남은 시간: <strong id="timeLeft">30</strong>s</div>
+        <div>최고 점수: <strong id="bestScore">0</strong></div>
+      </section>
+
+      <section class="controls" aria-label="게임 설정">
+        <label class="control">
+          시간
+          <select id="durationSelect" aria-label="게임 시간 선택">
+            <option value="20">20초</option>
+            <option value="30" selected>30초</option>
+            <option value="45">45초</option>
+            <option value="60">60초</option>
+          </select>
+        </label>
+        <label class="control">
+          속도
+          <select id="speedSelect" aria-label="햄스터 등장 속도 선택">
+            <option value="easy">느림</option>
+            <option value="normal" selected>보통</option>
+            <option value="hard">빠름</option>
+          </select>
+        </label>
+      </section>
+
+      <div id="board" class="board" aria-label="햄스터 보드"></div>
+
+      <section class="actions">
+        <button type="button" id="startBtn">시작</button>
+        <button type="button" id="resetBtn">리셋</button>
+      </section>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
